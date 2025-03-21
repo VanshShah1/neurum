@@ -1,0 +1,75 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Input Field */
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    outline: none;
+    background-color: white;
+}
+
+/* Button */
+.search-box button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+}
+
+.search-box button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .search-box {
+        flex-direction: row;
+    }
+
+    .search-box input {
+        flex: 1;
+    }
+
+    .search-box button {
+        width: auto;
+    }
+}
