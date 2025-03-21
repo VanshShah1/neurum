@@ -1,75 +1,50 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: white;
+    background: white;
     color: black;
-    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-/* Container */
 .container {
     text-align: center;
     width: 90%;
     max-width: 500px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Title */
 h1 {
-    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-/* Search Box */
-.search-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Input Field */
-.search-box input {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid lightgrey;
-    border-radius: 8px;
-    outline: none;
-    background-color: white;
-}
-
-/* Button */
-.search-box button {
-    background-color: black;
+button {
+    background: black;
     color: white;
+    padding: 10px 15px;
     border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 8px;
     cursor: pointer;
-    width: 100%;
-    max-width: 200px;
+    border-radius: 5px;
 }
 
-.search-box button:hover {
-    opacity: 0.9;
+button:hover {
+    background: #333;
 }
 
-/* Responsive Design */
-@media (min-width: 600px) {
-    .search-box {
-        flex-direction: row;
-    }
-
-    .search-box input {
-        flex: 1;
-    }
-
-    .search-box button {
-        width: auto;
-    }
+p {
+    margin-top: 15px;
+    font-size: 16px;
 }
