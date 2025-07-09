@@ -11,7 +11,11 @@ class Overlay(tk.Tk):
         self.attributes("-alpha", 0.7)  # Set transparency (0.0 to 1.0)
         self.attributes("-topmost", True)
 
-        self.entry = tk.Entry(self, bd=0, bg="lightgray", font=("Helvetica", 16))
+        # Make the window background transparent
+        self.config(bg='systemTransparent')
+        self.attributes("-transparent", True)
+
+        self.entry = tk.Entry(self, bd=0, bg="black", font=("Helvetica", 16))
         self.entry.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
         self.entry.bind("<ButtonPress-1>", self.start_move)
