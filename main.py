@@ -1,21 +1,13 @@
-import Neutron
-from g4f.client import Client
-import re
+import flet as ft
 
-client = Client()
+def main(page: ft.Page):
+    page.title = "browser"
+    page.bgcolor = "white"
 
-win = Neutron.Window("Neurum", size=(600, 400), css="styles.css")
-win.display(file="index.html")
+    title=ft.Text("neurum", color="black", size="100")
+    prompt_field=ft.Row(controls=[ft.CupertinoTextField(placeholder_text="search...", padding=10, width=800), ft.CupertinoButton(text="search", bgcolor="black", color="white", height=40, padding=10)])
+    ui=ft.Column(controls=[title, prompt_field], alignment=ft.MainAxisAlignment.CENTER)
+    row=ft.ResponsiveRow(controls=[ui], alignment=ft.MainAxisAlignment.CENTER)
+    page.add(row)
 
-def onSearch():
-    query = win.getElementById("searchInput").value
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": query}]
-        )
-    content = response.choices[0].message.content
-    win.getElementById("result").innerHTML = f"Search result for: {content}"
-
-win.getElementById("searchButton").addEventListener("click", Neutron.event(onSearch))
-
-win.show()
+ft.app(main)
