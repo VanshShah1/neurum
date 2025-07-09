@@ -6,17 +6,17 @@ class Overlay(tk.Tk):
         super().__init__()
 
         self.title("Overlay")
-        self.geometry("200x100+100+100")
+        self.geometry("400x50+100+100")
         self.overrideredirect(True)
-        self.attributes("-alpha", 0.5)  # Set transparency (0.0 to 1.0)
+        self.attributes("-alpha", 0.7)  # Set transparency (0.0 to 1.0)
         self.attributes("-topmost", True)
 
-        self.grip = tk.Label(self, text="Drag me", bg="gray")
-        self.grip.pack(fill=tk.BOTH, expand=True)
+        self.entry = tk.Entry(self, bd=0, bg="lightgray", font=("Helvetica", 16))
+        self.entry.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
-        self.grip.bind("<ButtonPress-1>", self.start_move)
-        self.grip.bind("<ButtonRelease-1>", self.stop_move)
-        self.grip.bind("<B1-Motion>", self.do_move)
+        self.entry.bind("<ButtonPress-1>", self.start_move)
+        self.entry.bind("<ButtonRelease-1>", self.stop_move)
+        self.entry.bind("<B1-Motion>", self.do_move)
 
         self._offset_x = 0
         self._offset_y = 0
